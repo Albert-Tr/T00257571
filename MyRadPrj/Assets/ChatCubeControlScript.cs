@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ChatCubeControlScript : MonoBehaviour
 {
+    Rigidbody myRB;
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 7, 0);
+       myRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -15,15 +16,25 @@ public class ChatCubeControlScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * Time.deltaTime;
+            myRB.AddForce(transform.forward);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            myRB.AddExplosionForce(25, transform.position + Vector3.down, 5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            myRB.AddExplosionForce(25, transform.position + Vector3.up, 5);
+        }
+
+        if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.up, 90  * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.up, -90 * Time.deltaTime);
         }
