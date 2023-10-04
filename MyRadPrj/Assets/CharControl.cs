@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CharControl : MonoBehaviour
 {
+    public GameObject snowballCloneTemplate;
 
     float currentSpeed, walkingSpeed = 2, runningSpeed = 5;
     private float turningSpeed = 180;
+
     Animator myAnimator;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,17 @@ public class CharControl : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.up, turningSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.down, turningSpeed * Time.deltaTime);
         }
+        if (Input.GetMouseButton(0))
+        {
+                GameObject newGO = Instantiate(snowballCloneTemplate);
+
+            snowBallScrypt mySnowball = newGO.GetComponent<snowBallScrypt>();
+
+            mySnowball.ImThrowingYou(this);
+        }
+
+
     }
 }
