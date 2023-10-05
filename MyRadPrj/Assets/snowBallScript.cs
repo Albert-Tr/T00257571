@@ -19,6 +19,16 @@ public class snowBallScrypt : MonoBehaviour
      
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("Ouch!");
+        dealWithHeats thingIHit = collision.gameObject.GetComponent<dealWithHeats>();
+        if (thingIHit != null)
+        {
+            thingIHit.IHitYou();
+        }
+    }
+
     internal void ImThrowingYou(CharControl CharControl)
     {
         transform.position = CharControl.transform.position + 2* Vector3.up + 3 * CharControl.transform.forward;
