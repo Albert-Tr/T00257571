@@ -31,7 +31,7 @@ public class snowBallScrypt : MonoBehaviour
 
     internal void ImThrowingYou(CharControl CharControl)
     {
-        transform.position = CharControl.transform.position + 2* Vector3.up + 3 * CharControl.transform.forward;
+        transform.position = CharControl.transform.position + 2 * Vector3.up + 3 * CharControl.transform.forward;
 
         rb = GetComponent<Rigidbody>();
 
