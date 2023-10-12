@@ -6,8 +6,14 @@ public class CharControl : MonoBehaviour
 {
     public GameObject snowballCloneTemplate;
 
+    Rigidbody myRB;
+
     float currentSpeed, walkingSpeed = 2, runningSpeed = 5, backSpeed = 1;
     private float turningSpeed = 180;
+
+    public float jumpForce = 500f;
+
+    protected bool doJump = false;
 
     Animator myAnimator;
     // Start is called before the first frame update
@@ -16,10 +22,12 @@ public class CharControl : MonoBehaviour
         currentSpeed = walkingSpeed;
         myAnimator = GetComponent<Animator>();
 
+        myRB = GetComponent<Rigidbody>();
 
     }
 
     private float ySpeed;
+    private object rb;
 
     // Update is called once per frame
     void Update()
@@ -50,6 +58,22 @@ public class CharControl : MonoBehaviour
             snowBallScrypt mySnowball = newGO.GetComponent<snowBallScrypt>();
 
             mySnowball.ImThrowingYou(this);
+        }
+        if(Input.GetKeyDown("space"))
+        {
+            doJump = true;
+        }
+
+        if(transform.position.y< -5f)
+        {
+            Debug.Log("Game end");
+        }
+
+        if(doJump)
+        {
+            myRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+            doJump = false;
         }
 
 

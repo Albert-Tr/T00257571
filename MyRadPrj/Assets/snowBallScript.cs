@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class snowBallScrypt : MonoBehaviour
@@ -10,7 +11,7 @@ public class snowBallScrypt : MonoBehaviour
     void Start()
     {
        
-        rb.velocity = new Vector3(0, 10, -4);
+     //   rb.velocity = new Vector3(0, 10, -4);
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class snowBallScrypt : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
-        rb.velocity = 10 * (2 * Vector3.up + 3 * CharControl.transform.forward);
+        rb.velocity = 2 * (1 * Vector3.up + 3 * CharControl.transform.forward);
     }
 
 }
