@@ -1051,6 +1051,7 @@ GameObject:
   - component: {fileID: 4301918962181497804}
   - component: {fileID: 2067948107803540581}
   - component: {fileID: 6277388382526354592}
+  - component: {fileID: 2791524606116160672}
   m_Layer: 0
   m_Name: skeletonChar (1)
   m_TagString: Untagged
@@ -1077,7 +1078,7 @@ Transform:
   - {fileID: 3861471958839255315}
   - {fileID: 1174179454783971997}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &644192385272004765
 Animator:
@@ -1162,6 +1163,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.46, y: 0.37, z: 1.39}
   m_Center: {x: 0, y: 0.19, z: 0}
+--- !u!114 &2791524606116160672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266106291541257324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1483ac6fca197a44d8047ba05642f915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7349425002680552381
 GameObject:
   m_ObjectHideFlags: 0
