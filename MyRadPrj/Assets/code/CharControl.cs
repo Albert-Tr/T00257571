@@ -75,7 +75,15 @@ public class CharControl : MonoBehaviour
 
             doJump = false;
         }
+    }
 
-
+    private static void OnCollisionEnter(Collision collision)
+    {
+        print("Ouch!");
+        dealWithHeats thingIHit = collision.gameObject.GetComponent<dealWithHeats>();
+        if (thingIHit != null)
+        {
+            thingIHit.IHitYou();
+        }
     }
 }

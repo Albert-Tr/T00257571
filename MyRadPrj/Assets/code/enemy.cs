@@ -24,5 +24,18 @@ public class EnemyAI : MonoBehaviour
 
         
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("Ouch!");
+        dealWithHeats thingIHit = collision.gameObject.GetComponent<dealWithHeats>();
+        if (thingIHit != null)
+        {
+            thingIHit.IHitYou();
+        }
+    }
+
 }
